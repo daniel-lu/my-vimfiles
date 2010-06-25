@@ -254,6 +254,9 @@ endif
 "fold settings
 set foldmethod=indent
 
+" Show fold column
+set foldcolumn=4
+
 
 """""""""""""""""""""""""""""""""""
 " visual mode related
@@ -301,6 +304,12 @@ map <leader>q :q!<CR>
 
 " Force back to visual mode
 map <leader>v :visual!<CR>
+
+" Show fold column
+map <leader>f :set foldcolumn=4<CR>
+
+" Hide fold column
+map <leader>F :set foldcolumn=0<CR>
 
 " Fast editing .vimrc
 if MyOS() == "windows"
