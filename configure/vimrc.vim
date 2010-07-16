@@ -295,6 +295,9 @@ let g:mapleader = ","
 map <F2> :tabnew<CR>
 map <F3> :tabprevious<CR>
 map <F4> :tabnext<CR>
+map <Leader>t :tabnew<CR>
+map <Leader>tk :tabnext<CR>
+map <leader>tj :tabprevious<CR>
 
 " Fast saving
 map <leader>w :w!<CR>
@@ -306,10 +309,10 @@ map <leader>q :q!<CR>
 map <leader>v :visual!<CR>
 
 " Show fold column
-map <leader>f :set foldcolumn=4<CR>
+map <leader>f4 :set foldcolumn=4<CR>
 
 " Hide fold column
-map <leader>F :set foldcolumn=0<CR>
+map <leader>f0 :set foldcolumn=0<CR>
 
 " Fast editing .vimrc
 if MyOS() == "windows"
@@ -323,9 +326,9 @@ map <leader>t2 :setlocal shiftwidth=2<CR>
 map <leader>t4 :setlocal shiftwidth=4<CR>
 map <leader>t8 :setlocal shiftwidth=8<CR>
 
-imap { {}
-imap [ []
-imap ( ()
+"imap { {}
+"imap [ []
+"imap ( ()
 
 "Command mode shortcuts
 " Edit workspace
@@ -363,11 +366,16 @@ iab xdate <C-R>=strftime("%d/%m/%Y %H:%M:%S")<CR>
 iab xauthor Daniel Lu
 iab xsvn $Id$
 
+:inoremap xdate <C-R>=strftime("%d/%m/%Y %H:%M:%S")<CR>
+:inoremap xauthor Daniel Lu
+:inoremap xsvn $Id$
+
 """""""""""""""""""""""""""""""
 " MISC
 """""""""""""""""""""""""""""""
 "Remove window ^M - when encoding gets messed up
 noremap <F12> mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm
+noremap <leader>r mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm
 
 """""""""""""""""""""""""""""""
 " Plugin configure starts
@@ -380,6 +388,7 @@ elseif MyOS() == "linux"
 endif
 
 nnoremap <silent> <F9> :TlistToggle<CR>
+nnoremap <silent> <leader>fl :TlistToggle<CR>
 "show tags of current document only
 let Tlist_Show_One_File = 1
 "exit vim if the taglist window is the only window
@@ -398,6 +407,7 @@ let Tlist_Compact_Format = 1
 
 "NERDTree key map
 map <F8> :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 
 "NeoComplcache configure
 "NeoCompletion setting
@@ -424,11 +434,14 @@ let g:neocomplcache_enable_smart_case=1
 "Use wildcard character '*' or not
 "let g:neocomplcache_enable_widcard=1
 "Quick select the candidate by the short words
-"let g:neocomplcache_enable_quick_match=0
+let g:neocomplcache_enable_quick_match=1
 "Use CursorHoldI event or not while complete candidates
 "let g:neocomplcache_enable_cursor_hold_i=0
 "Selete the first candidate or not
 let g:noecomplcache_enable_auto_select=1
+"inoremap <expr><CR>  (pumvisible() ? "\<C-e>":'') . (&indentexpr != '' ? "\<C-f>\<CR>X\<BS>":"\<CR>")
+"inoremap <expr><C-h> pumvisible() ? neocomplcache#cancel_popup()."\<C-h>" : "\<C-h>"
+"inoremap <expr><BS> pumvisible() ? neocomplcache#cancel_popup()."\<C-h>" : "\<C-h>"
 "Time of automatic completion by millin second unit
 "let g:neocomplcache_cursor_hold_i_time=300
 "If input a capital letter, takes ambiguous searching as an end of the words in it or not
@@ -538,3 +551,13 @@ let g:snips_author='Daniel Lu'
     "call ExtractSnips("$VIMHOME/snippets/html", "php")
 "endfunction
 
+"Buffer Explorer setting
+map <leader><Space> :BufExplorer<CR>
+
+"Fuzzy finder
+map <leader>ff :FufFile<CR>
+map <leader>fd :FufDir<CR>
+
+"Project setting
+map <F5> :Project<CR>
+map <leader>p :Project<CR>

@@ -199,22 +199,6 @@ Standard plugins ~
 |pi_zip.txt|	   Zip archive explorer
 
 LOCAL ADDITIONS:				*local-additions*
-|NERD_commenter.txt|         Plugin for commenting code
-|NERD_tree.txt|   A tree explorer plugin that owns your momma!
-|bufexplorer.txt|              Buffer Explorer       Last Change: 16 Feb 2010
-|dbext.txt|	For Vim version 7.0.  Last change: 2009 Aug 27
-|fuf.txt|       buffer/file/command/tag/etc explorer with fuzzy matching.
-|neocomplcache.txt|	Ultimate auto completion system for Vim
-|snipMate.txt|  Plugin for using TextMate-style snippets in Vim.
-|snippets_emu.txt|  For Vim version 7.0. Last change: 2006 Dec 26
-|supertab.txt|
-|taglist.txt|	Plugin for browsing source code
-|vcscommand.txt|	vcscommand
-|winmanager|       Plugin for a classical Windows style IDE for Vim 6.0
-|xpt-api|
-|xpt-snippet-syntax|
-|xpt-snippet-tutorial|
-|XPTemplate|	For Vim version 7.2. Last change: 2009 Nov 08
 
 ------------------------------------------------------------------------------
 *bars*		Bars example

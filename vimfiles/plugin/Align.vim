@@ -8,6 +8,7 @@
 :inoremap [ []<ESC>i
 :inoremap ] <c-r>=ClosePair(']')<CR>
 :inoremap ;; <ESC>A;<CR>
+:inoremap <leader>; <ESC>A;<ESC>
 
 function ClosePair(char)
    if getline('.')[col('.') - 1] == a:char
